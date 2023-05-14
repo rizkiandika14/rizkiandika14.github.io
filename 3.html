@@ -1,0 +1,52 @@
+<style>
+      background-color: #2196F3;
+
+}
+
+/* Create the indicator (the dot/circle - hidden when not checked) */
+
+.container-radio .checkmark:after {
+
+    content: "";
+
+    position: absolute;
+
+    display: none;
+
+}
+
+/* Show the indicator (dot/circle) when checked */
+
+.container-radio input:checked ~ .checkmark:after {
+
+    display: block;
+
+}
+
+/* Style the indicator (dot/circle) */
+
+.container-radio .checkmark:after {
+
+ 	top: 9px;
+
+	left: 9px;
+
+	width: 8px;
+
+	height: 8px;
+
+	border-radius: 50%;
+
+	background: white;
+
+}
+</style>
+<h1>Special Wishlist Date</h1>
+<label class="container-checkbox">Photobox
+
+  <input type="checkbox" checked="checked">
+
+  <span class="checkmark"></span>
+
+</label>
+
