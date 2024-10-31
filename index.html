@@ -1,112 +1,240 @@
-<style>
-    body {
-        font: 400 1em/1.5 "Neuton";
-        background: #090d00;
-        color: rgba(255, 255, 255, .25);
-        text-align: center;
-        margin: 0
-    }
-
-    p {
-        text-transform: uppercase;
-        letter-spacing: .5em;
-        display: inline-block;
-        border: 4px double rgba(255, 255, 255, .25);
-        border-width: 4px 0;
-        padding: 1.5em 0em;
-        position: absolute;
-        top: 18%;
-        left: 50%;
-        width: 40em;
-        margin: 0 0 0 -20em;
-    }
-
-    span {
-
-        font: 700 4em/1 "Oswald", sans-serif;
-        letter-spacing: 0;
-        padding: .25em 0 .325em;
-        display: block;
-        margin: 0 auto;
-        text-shadow: 0 0 80px rgba(255, 255, 255, .5);
-
-        /* Clip Background Image */
-
-        background: url(https://i.ibb.co/RDTnNrT/animated-text-fill.png) repeat-y;
-        -webkit-background-clip: text;
-        background-clip: text;
-
-        /* Animate Background Image */
-
-        -webkit-text-fill-color: transparent;
-        -webkit-animation: aitf 80s linear infinite;
-
-        /* Activate hardware acceleration for smoother animations */
-
-        -webkit-transform: translate3d(0, 0, 0);
-        -webkit-backface-visibility: hidden;
-
-    }
-
-
-    /* Animate Background Image */
-
-    @-webkit-keyframes aitf {
-        0% {
-            background-position: 0% 50%;
-        }
-
-        100% {
-            background-position: 100% 50%;
-        }
-    }
-</style>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>-</title>
-
-    <script type="text/javascript" src="script.js"></script>
-
-
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+          }
+          
+          .countdown-container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+            max-width: 500px;
+            width: 90%;
+          }
+          
+          h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+          }
+          
+          .input-container {
+            margin-bottom: 20px;
+          }
+          
+          input[type="date"] {
+            padding: 8px;
+            font-size: 1rem;
+          }
+          
+          button {
+            background-color: #f44336;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+          }
+          
+          button:hover {
+            background-color: #d32f2f;
+          }
+          
+          .countdown {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          }
+          
+          .countdown-item {
+            margin: 10px;
+            font-size: 2rem;
+            flex: 1;
+            text-align: center;
+          }
+          
+          .countdown-item span {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #f44336;
+          }
+          
+          .container {
+            width: 100vw;
+          }
+          
+          .confetti {
+            position: absolute;
+            z-index: 1;
+            top: -10px;
+            border-radius: 0%;
+          }
+          
+          .confetti--animation-slow {
+            animation: confetti-slow 2.25s linear 1 forwards;
+          }
+          .confetti--animation-medium {
+            animation: confetti-medium 1.75s linear 1 forwards;
+          }
+          .confetti--animation-fast {
+            animation: confetti-fast 1.25s linear 1 forwards;
+          }
+          
+          @keyframes confetti-slow {
+            0% {
+              transform: translate3d(0, 0, 0) rotateX(0) rotateY(0);
+            }
+            100% {
+              transform: translate3d(25px, 105vh, 0) rotateX(360deg) rotateY(180deg);
+            }
+          }
+          @keyframes confetti-medium {
+            0% {
+              transform: translate3d(0, 0, 0) rotateX(0) rotateY(0);
+            }
+            100% {
+              transform: translate3d(100px, 105vh, 0) rotateX(100deg) rotateY(360deg);
+            }
+          }
+          @keyframes confetti-fast {
+            0% {
+              transform: translate3d(0, 0, 0) rotateX(0) rotateY(0);
+            }
+            100% {
+              transform: translate3d(-50px, 105vh, 0) rotateX(10deg) rotateY(250deg);
+            }
+          }
+          
+          /* Media Queries for Responsive Design */
+          @media (max-width: 600px) {
+            .countdown-item {
+                font-size: 1.5rem;
+            }
+          
+            .countdown-item span {
+                font-size: 2.5rem;
+            }
+          }
+    </style>
 </head>
-
 <body>
+    <div class="countdown-container">
+        <h1>Hitung mundur</h1>
 
-    <p>
-        Here is a gift for you
-        <span>
-            Someone
-<!--             Ayu Wulaningsih -->
-        </span>
-        &mdash; From : Rizki Andika &mdash;
-        <br><a href="1.html" class="cta">
-            Click here!
-        </a>
-        <br><a href="2.html" class="cta">
-            Click Me!
-        </a>
-<!--         <br><a href="3.html" class="cta">
+        <div class="countdown" id="countdown">
+            <div class="countdown-item">
+                <span id="days">00</span>
+                <p>Hari</p>
+            </div>
+            <div class="countdown-item">
+                <span id="hours">00</span>
+                <p>Jam</p>
+            </div>
+            <div class="countdown-item">
+                <span id="minutes">00</span>
+                <p>Menit</p>
+            </div>
+            <div class="countdown-item">
+                <span id="seconds">00</span>
+                <p>Detik</p>
+            </div>
+        </div>
+    </div>
+    
+<script>
+let birthdayDate = new Date('2024-10-01 00:00:00').getTime(); // Default date
 
-            wishlist!
-
-        </a> -->
-    </p>
 
 
+function updateCountdown() {
+    const countdownElement = document.getElementById("countdown");
+    const currentDate = new Date().getTime();
+    const timeLeft = birthdayDate - currentDate;
 
+    if (timeLeft <= 0) {
+        // Birthday has passed
+        //arahkan ke Happy Birthday html
+        window.location.href = "index2.html";
+    }
 
+    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
+    document.getElementById("days").textContent = days.toString().padStart(2, '0');
+    document.getElementById("hours").textContent = hours.toString().padStart(2, '0');
+    document.getElementById("minutes").textContent = minutes.toString().padStart(2, '0');
+    document.getElementById("seconds").textContent = seconds.toString().padStart(2, '0');
+
+    // Update the countdown every second
+    setTimeout(updateCountdown, 1000);
+}
+
+setInterval(updateCountdown, 1000);
+updateCountdown();
+
+// Function to validate the date format
+function isValidDate(dateString) {
+    const regEx = /^\d{4}-\d{2}-\d{2}$/;
+    if (!dateString.match(regEx)) return false; // Invalid format
+    const d = new Date(dateString + "T00:00:00");
+    return !isNaN(d.getTime());
+}
+
+function confettiEffect() {
+  const Confettiful = function (el) {
+    this.el = el;
+    this.containerEl = null;
+  
+    this.confettiFrequency = 3;
+    this.confettiColors = ['#fce18a', '#ff726d', '#b48def', '#f4306d'];
+    this.confettiAnimations = ['slow', 'medium', 'fast'];
+  
+    this._renderConfetti();
+  };
+  
+  
+  Confettiful.prototype._renderConfetti = function () {
+    const confettiContanier = document.getElementById("confetti");
+    this.confettiInterval = setInterval(() => {
+      const confettiEl = document.createElement('div');
+      const confettiSize = Math.floor(Math.random() * 3) + 7 + 'px';
+      const confettiBackground = this.confettiColors[Math.floor(Math.random() * this.confettiColors.length)];
+      const confettiLeft = Math.floor(Math.random() * this.el.offsetWidth) + 'px';
+      const confettiAnimation = this.confettiAnimations[Math.floor(Math.random() * this.confettiAnimations.length)];
+  
+      confettiEl.classList.add('confetti', 'confetti--animation-' + confettiAnimation);
+      confettiEl.style.left = confettiLeft;
+      confettiEl.style.width = confettiSize;
+      confettiEl.style.height = confettiSize;
+      confettiEl.style.backgroundColor = confettiBackground;
+  
+      confettiEl.removeTimeout = setTimeout(function () {
+        confettiEl.parentNode.removeChild(confettiEl);
+      }, 3000);
+  
+      confettiContanier.appendChild(confettiEl);
+    }, 25);
+  };
+  
+  window.confettiful = new Confettiful(document.querySelector('.container'));
+}
+</script>
 </body>
-
-
 </html>
+
