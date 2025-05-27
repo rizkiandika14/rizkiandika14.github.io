@@ -1,240 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Birthday</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            overflow: hidden;
-          }
-          
-          .countdown-container {
-            text-align: center;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
-            max-width: 500px;
-            width: 90%;
-          }
-          
-          h1 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-          }
-          
-          .input-container {
-            margin-bottom: 20px;
-          }
-          
-          input[type="date"] {
-            padding: 8px;
-            font-size: 1rem;
-          }
-          
-          button {
-            background-color: #f44336;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            font-size: 1rem;
-            cursor: pointer;
-          }
-          
-          button:hover {
-            background-color: #d32f2f;
-          }
-          
-          .countdown {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-          }
-          
-          .countdown-item {
-            margin: 10px;
-            font-size: 2rem;
-            flex: 1;
-            text-align: center;
-          }
-          
-          .countdown-item span {
-            font-size: 3rem;
-            font-weight: bold;
-            color: #f44336;
-          }
-          
-          .container {
-            width: 100vw;
-          }
-          
-          .confetti {
-            position: absolute;
-            z-index: 1;
-            top: -10px;
-            border-radius: 0%;
-          }
-          
-          .confetti--animation-slow {
-            animation: confetti-slow 2.25s linear 1 forwards;
-          }
-          .confetti--animation-medium {
-            animation: confetti-medium 1.75s linear 1 forwards;
-          }
-          .confetti--animation-fast {
-            animation: confetti-fast 1.25s linear 1 forwards;
-          }
-          
-          @keyframes confetti-slow {
-            0% {
-              transform: translate3d(0, 0, 0) rotateX(0) rotateY(0);
-            }
-            100% {
-              transform: translate3d(25px, 105vh, 0) rotateX(360deg) rotateY(180deg);
-            }
-          }
-          @keyframes confetti-medium {
-            0% {
-              transform: translate3d(0, 0, 0) rotateX(0) rotateY(0);
-            }
-            100% {
-              transform: translate3d(100px, 105vh, 0) rotateX(100deg) rotateY(360deg);
-            }
-          }
-          @keyframes confetti-fast {
-            0% {
-              transform: translate3d(0, 0, 0) rotateX(0) rotateY(0);
-            }
-            100% {
-              transform: translate3d(-50px, 105vh, 0) rotateX(10deg) rotateY(250deg);
-            }
-          }
-          
-          /* Media Queries for Responsive Design */
-          @media (max-width: 600px) {
-            .countdown-item {
-                font-size: 1.5rem;
-            }
-          
-            .countdown-item span {
-                font-size: 2.5rem;
-            }
-          }
-    </style>
-</head>
-<body>
-    <div class="countdown-container">
-        <h1>Hitung mundur</h1>
-
-        <div class="countdown" id="countdown">
-            <div class="countdown-item">
-                <span id="days">00</span>
-                <p>Hari</p>
-            </div>
-            <div class="countdown-item">
-                <span id="hours">00</span>
-                <p>Jam</p>
-            </div>
-            <div class="countdown-item">
-                <span id="minutes">00</span>
-                <p>Menit</p>
-            </div>
-            <div class="countdown-item">
-                <span id="seconds">00</span>
-                <p>Detik</p>
-            </div>
-        </div>
-    </div>
-    
-<script>
-let birthdayDate = new Date('2024-10-31 00:00:00').getTime(); // Default date
-
-
-
-function updateCountdown() {
-    const countdownElement = document.getElementById("countdown");
-    const currentDate = new Date().getTime();
-    const timeLeft = birthdayDate - currentDate;
-
-    if (timeLeft <= 0) {
-        // Birthday has passed
-        //arahkan ke Happy Birthday html
-        window.location.href = "index2.html";
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Forgive Me? XOXO 💙</title>
+  <style>
+    /* Reset dan base styles */
+    * {
+      box-sizing: border-box;
+    }
+    body, html {
+      margin: 0; padding: 0; height: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #fceabb, #f8b500);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #3a3a3a;
+      user-select: none;
+      overflow: hidden;
+    }
+    .container {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+      max-width: 420px;
+      width: 90%;
+      padding: 30px 40px;
+      text-align: center;
+      position: relative;
+      min-height: 320px;
+    }
+    h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+      color: #d35400;
+      letter-spacing: 1.2px;
+      user-select: text;
+    }
+    p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      line-height: 1.5;
+      user-select: text;
+    }
+    .xoxo {
+      font-size: 1.5rem;
+      color: #e67e22;
+      font-weight: bold;
+      margin-bottom: 25px;
+      user-select: text;
+    }
+    button {
+      background-color: #e67e22;
+      color: white;
+      border: none;
+      padding: 14px 28px;
+      font-size: 1.1rem;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 6px 15px rgba(230,126,34,0.4);
+      user-select: none;
+      margin: 10px auto;
+      min-width: 130px;
+      display: block;
+      position: static; /* Default position */
+    }
+    button:hover {
+      background-color: #d35400;
+      transform: scale(1.05);
+    }
+    button:active {
+      transform: scale(0.95);
+    }
+    .message-box {
+      background-color: #fef3e7;
+      border-radius: 15px;
+      padding: 25px 30px;
+      margin-top: 30px;
+      font-style: italic;
+      color: #d35400;
+      box-shadow: inset 0 0 15px #f5c27a;
+      user-select: text;
+      font-size: 1.15rem;
+      line-height: 1.6;
+    }
+    .heart {
+      color: #e74c3c;
+      font-size: 2rem;
+      animation: heartbeat 1.5s infinite;
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: 8px;
+    }
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.4); }
     }
 
-    const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-    const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+    /* Responsive */
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 1rem;
+      }
+      button {
+        padding: 12px 20px;
+        font-size: 1rem;
+        min-width: 110px;
+      }
+      .container {
+        padding: 25px 20px;
+        min-height: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container" id="container">
+    <h1>I'm Sorry... <span class="heart">❤️</span></h1>
+    <p>I never meant to hurt you. Can you please forgive me? XOXO</p>
+    <div class="xoxo">XOXO 💌</div>
 
-    document.getElementById("days").textContent = days.toString().padStart(2, '0');
-    document.getElementById("hours").textContent = hours.toString().padStart(2, '0');
-    document.getElementById("minutes").textContent = minutes.toString().padStart(2, '0');
-    document.getElementById("seconds").textContent = seconds.toString().padStart(2, '0');
+    <button id="forgiveBtn">Forgive Me</button>
+    <button id="notYetBtn">Not Yet</button>
 
-    // Update the countdown every second
-    setTimeout(updateCountdown, 1000);
-}
+    <div id="finalMessage" class="message-box" style="display:none;">
+      <p>
+        Thank you for forgiving me! Your kindness means the world to me. Sending you all my love and XOXO! 💖🤗
+      </p>
+    </div>
+  </div>
 
-setInterval(updateCountdown, 1000);
-updateCountdown();
+  <script>
+    const notYetBtn = document.getElementById('notYetBtn');
+    const forgiveBtn = document.getElementById('forgiveBtn');
+    const finalMessage = document.getElementById('finalMessage');
+    const container = document.getElementById('container');
 
-// Function to validate the date format
-function isValidDate(dateString) {
-    const regEx = /^\d{4}-\d{2}-\d{2}$/;
-    if (!dateString.match(regEx)) return false; // Invalid format
-    const d = new Date(dateString + "T00:00:00");
-    return !isNaN(d.getTime());
-}
+    // Fungsi untuk menggerakkan tombol "Not Yet" ke posisi acak di dalam container
+    function moveButtonRandomly() {
+      // Ubah posisi tombol menjadi absolute agar bisa dipindah bebas
+      notYetBtn.style.position = 'absolute';
 
-function confettiEffect() {
-  const Confettiful = function (el) {
-    this.el = el;
-    this.containerEl = null;
-  
-    this.confettiFrequency = 3;
-    this.confettiColors = ['#fce18a', '#ff726d', '#b48def', '#f4306d'];
-    this.confettiAnimations = ['slow', 'medium', 'fast'];
-  
-    this._renderConfetti();
-  };
-  
-  
-  Confettiful.prototype._renderConfetti = function () {
-    const confettiContanier = document.getElementById("confetti");
-    this.confettiInterval = setInterval(() => {
-      const confettiEl = document.createElement('div');
-      const confettiSize = Math.floor(Math.random() * 3) + 7 + 'px';
-      const confettiBackground = this.confettiColors[Math.floor(Math.random() * this.confettiColors.length)];
-      const confettiLeft = Math.floor(Math.random() * this.el.offsetWidth) + 'px';
-      const confettiAnimation = this.confettiAnimations[Math.floor(Math.random() * this.confettiAnimations.length)];
-  
-      confettiEl.classList.add('confetti', 'confetti--animation-' + confettiAnimation);
-      confettiEl.style.left = confettiLeft;
-      confettiEl.style.width = confettiSize;
-      confettiEl.style.height = confettiSize;
-      confettiEl.style.backgroundColor = confettiBackground;
-  
-      confettiEl.removeTimeout = setTimeout(function () {
-        confettiEl.parentNode.removeChild(confettiEl);
-      }, 3000);
-  
-      confettiContanier.appendChild(confettiEl);
-    }, 25);
-  };
-  
-  window.confettiful = new Confettiful(document.querySelector('.container'));
-}
-</script>
+      const maxTop = container.clientHeight - notYetBtn.offsetHeight - 20; // buffer 20px
+      const maxLeft = container.clientWidth - notYetBtn.offsetWidth - 20;
+
+      const randomTop = Math.floor(Math.random() * maxTop);
+      const randomLeft = Math.floor(Math.random() * maxLeft);
+
+      notYetBtn.style.top = randomTop + 'px';
+      notYetBtn.style.left = randomLeft + 'px';
+      notYetBtn.style.transform = 'none'; // reset transform
+    }
+
+    // Event klik tombol "Not Yet"
+    notYetBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      moveButtonRandomly();
+    });
+
+    // Event klik tombol "Forgive Me"
+    forgiveBtn.addEventListener('click', () => {
+      forgiveBtn.style.display = 'none';
+      notYetBtn.style.display = 'none';
+      finalMessage.style.display = 'block';
+    });
+
+    // Optional: tombol "Not Yet" juga bergerak saat disentuh di perangkat mobile
+    notYetBtn.addEventListener('touchstart', (e) => {
+      e.preventDefault();
+      moveButtonRandomly();
+    });
+  </script>
 </body>
 </html>
-
